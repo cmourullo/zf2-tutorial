@@ -1,5 +1,10 @@
 <?php
 return array(
+    'service_manager' => array(
+        'invokables' => array(
+            'Blog\Service\PostServiceInterface' => 'Blog\Service\PostService'
+        )
+    ),
     'view_manager' => array(
         'template_path_stack' => array(
             __DIR__ . '/../view',
