@@ -2,6 +2,11 @@
 return array(
     // This lines opens the configuration for the RouteManager
     'router' => array(
+        'controllers' => array(
+            'invokables' => array(
+                'Blog\Controller\List' => 'Blog\Controller\ListController'
+            )
+        ),
         // Open configuration for all possible routes
         'routes' => array(
             // Define a new route called "post"
