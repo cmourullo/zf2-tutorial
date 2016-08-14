@@ -7,7 +7,7 @@ return array(
     ),
     'controllers' => array(
         'factories' => array(
-            'Blog\Controller\List' => 'Blog\Controller\ListController'
+            'Blog\Controller\List' => 'Blog\Controller\ListControllerFactory'
         )
     ),
     // This lines opens the configuration for the RouteManager
