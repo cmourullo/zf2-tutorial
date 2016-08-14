@@ -6,7 +6,7 @@ return array(
         ),
     ),
     'controllers' => array(
-        'invokables' => array(
+        'factories' => array(
             'Blog\Controller\List' => 'Blog\Controller\ListController'
         )
     ),
