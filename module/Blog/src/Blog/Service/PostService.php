@@ -1,6 +1,8 @@
 <?php
 namespace Blog\Service;
 
+use Blog\Model\Post;
+
 class PostService implements PostServiceInterface
 {
     protected $data = array(
@@ -30,13 +32,19 @@ class PostService implements PostServiceInterface
             'text'  => 'This is our fifth blog post!'
         )
     );
-    
+
     /**
      * {@inheritDoc}
      */
     public function findAllPosts()
     {
-        // TODO: Implement findAllPosts() method.
+        $allPosts = array();
+
+        foreach ($this->data as $index => $post) {
+            $allPosts[] = $this->findPost($index);
+        }
+
+        return $allPosts;
     }
 
     /**
@@ -44,6 +52,13 @@ class PostService implements PostServiceInterface
      */
     public function findPost($id)
     {
-        // TODO: Implement findPost() method.
+        $postData = $this->data[$id];
+
+        $model = new Post();
+        $model->setId($postData['id']);
+        $model->setTitle($postData['title']);
+        $model->setText($postData['text']);
+
+        return $model;
     }
 }
