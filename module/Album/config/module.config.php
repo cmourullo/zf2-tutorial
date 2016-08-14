@@ -6,17 +6,6 @@ return array(
         ),
     ),
 
-    'home' => array(
-        'type' => 'Zend\Mvc\Router\Http\Literal',
-        'options' => array(
-            'route'    => '/',
-            'defaults' => array(
-                'controller' => 'Album\Controller\Album',
-                'action'     => 'index',
-            ),
-        ),
-    ),
-
     'router' => array(
         'routes' => array(
             'album' => array(
