@@ -1,11 +1,16 @@
 <?php
 return array(
-    // This lines opens the configuration for the RouteManager
+    'view_manager' => array(
+        'template_path_stack' => array(
+            __DIR__ . '/../view',
+        ),
+    ),
     'controllers' => array(
         'invokables' => array(
             'Blog\Controller\List' => 'Blog\Controller\ListController'
         )
     ),
+    // This lines opens the configuration for the RouteManager
     'router' => array(
         // Open configuration for all possible routes
         'routes' => array(
