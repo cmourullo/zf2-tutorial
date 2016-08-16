@@ -38,13 +38,6 @@ class PostService implements PostServiceInterface
      */
     public function findAllPosts()
     {
-        $allPosts = array();
-
-        foreach ($this->data as $index => $post) {
-            $allPosts[] = $this->findPost($index);
-        }
-
-        return $allPosts;
     }
 
     /**
@@ -52,13 +45,5 @@ class PostService implements PostServiceInterface
      */
     public function findPost($id)
     {
-        $postData = $this->data[$id];
-
-        $model = new Post();
-        $model->setId($postData['id']);
-        $model->setTitle($postData['title']);
-        $model->setText($postData['text']);
-
-        return $model;
     }
 }
