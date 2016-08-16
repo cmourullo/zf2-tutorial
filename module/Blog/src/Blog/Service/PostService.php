@@ -1,7 +1,7 @@
 <?php
 namespace Blog\Service;
 
-use Blog\Model\Post;
+use Blog\Mapper\PostMapperInterface;
 
 class PostService implements PostServiceInterface
 {
