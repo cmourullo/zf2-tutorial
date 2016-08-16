@@ -1,5 +1,14 @@
 <?php
 return array(
+    'db' => array(
+        'driver'         => 'Pdo',
+        'username'       => 'dbuser',
+        'password'       => '123',
+        'dsn'            => 'mysql:dbname=blog;host=localhost',
+        'driver_options' => array(
+            \PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''
+        )
+    ),
     'service_manager' => array(
         'factories' => array(
             'Blog\Service\PostServiceInterface' => 'Blog\Factory\PostServiceFactory'
