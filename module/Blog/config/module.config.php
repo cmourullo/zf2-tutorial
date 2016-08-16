@@ -11,7 +11,8 @@ return array(
     ),
     'service_manager' => array(
         'factories' => array(
-            'Blog\Service\PostServiceInterface' => 'Blog\Factory\PostServiceFactory'
+            'Blog\Service\PostServiceInterface' => 'Blog\Factory\PostServiceFactory',
+            'Zend\Db\Adapter\Adapter'           => 'Zend\Db\Adapter\AdapterServiceFactory'
         )
     ),
     'view_manager' => array(
