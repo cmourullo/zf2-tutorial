@@ -23,6 +23,7 @@ class PostService implements PostServiceInterface
      */
     public function findAllPosts()
     {
+        return $this->postMapper->findAll();
     }
 
     /**
@@ -30,5 +31,6 @@ class PostService implements PostServiceInterface
      */
     public function findPost($id)
     {
+        return $this->postMapper->find($id);
     }
 }
