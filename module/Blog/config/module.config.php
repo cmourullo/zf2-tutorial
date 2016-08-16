@@ -1,7 +1,7 @@
 <?php
 return array(
     'service_manager' => array(
-        'invokables' => array(
+        'factories' => array(
             'Blog\Service\PostServiceInterface' => 'Blog\Service\PostService'
         )
     ),
