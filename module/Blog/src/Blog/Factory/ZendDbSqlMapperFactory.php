@@ -20,7 +20,9 @@ class ZendDbSqlMapperFactory implements FactoryInterface
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
         return new ZendDbSqlMapper(
-            $serviceLocator->get('Zend\Db\Adapter\Adapter')
+            $serviceLocator->get('Zend\Db\Adapter\Adapter'),
+            new ClassMethods(false),
+            new Post()
         );
     }
 }
