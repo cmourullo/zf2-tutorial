@@ -5,7 +5,7 @@ namespace Blog\Mapper;
 use Blog\Model\PostInterface;
 use Zend\Db\Adapter\AdapterInterface;
 use Zend\Db\Adapter\Driver\ResultInterface;
-use Zend\Db\ResultSet\ResultSet;
+use Zend\Db\ResultSet\HydratingResultSet;
 use Zend\Db\Sql\Sql;
 
 class ZendDbSqlMapper implements PostMapperInterface
@@ -45,11 +45,11 @@ class ZendDbSqlMapper implements PostMapperInterface
         $result = $stmt->execute();
 
         if ($result instanceof ResultInterface && $result->isQueryResult()) {
-            $resultSet = new ResultSet();
+            $resultSet = new HydratingResultSet(new \Zend\Stdlib\Hydrator\ClassMethods(), new \Blog\Model\Post());
 
-            \Zend\Debug\Debug::dump($resultSet->initialize($result));die();
+            return $resultSet->initialize($result);
         }
 
-        die("no data");
+        return array();
     }
 }
