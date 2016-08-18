@@ -23,4 +23,9 @@ class ListController extends AbstractActionController
             'posts' => $this->postService->findAllPosts()
         ));
     }
+
+    public function detailAction()
+    {
+        return new ViewModel();
+    }
 }
