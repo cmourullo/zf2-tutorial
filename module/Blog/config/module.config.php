@@ -23,7 +23,8 @@ return array(
     ),
     'controllers' => array(
         'factories' => array(
-            'Blog\Controller\List' => 'Blog\Factory\ListControllerFactory'
+            'Blog\Controller\List' => 'Blog\Factory\ListControllerFactory',
+            'Blog\Controller\Write' => 'Blog\Factory\WriteControllerFactory'
         )
     ),
     'router' => array(
