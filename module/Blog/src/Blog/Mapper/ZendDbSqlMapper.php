@@ -4,6 +4,7 @@ namespace Blog\Mapper;
 
 use Blog\Model\PostInterface;
 use Zend\Db\Adapter\AdapterInterface;
+use Zend\Db\Sql\Sql;
 
 class ZendDbSqlMapper implements PostMapperInterface
 {
@@ -35,5 +36,12 @@ class ZendDbSqlMapper implements PostMapperInterface
      */
     public function findAll()
     {
+        $sql    = new Sql($this->dbAdapter);
+        $select = $sql->select('posts');
+
+        $stmt   = $sql->prepareStatementForSqlObject($select);
+        $result = $stmt->execute();
+
+        \Zend\Debug\Debug::dump($result);die();
     }
 }
