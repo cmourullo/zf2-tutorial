@@ -1,4 +1,5 @@
 <?php
+// Filename: /module/Blog/src/Blog/Mapper/PostMapperInterface.php
 namespace Blog\Mapper;
 
 use Blog\Model\PostInterface;
@@ -16,4 +17,13 @@ interface PostMapperInterface
      * @return array|PostInterface[]
      */
     public function findAll();
+
+    /**
+     * @param PostInterface $postObject
+     *
+     * @param PostInterface $postObject
+     * @return PostInterface
+     * @throws \Exception
+     */
+    public function save(PostInterface $postObject);
 }
