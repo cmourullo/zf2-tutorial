@@ -75,6 +75,19 @@ return array(
                             )
                         )
                     ),
+                    'delete' => array(
+                        'type' => 'segment',
+                        'options' => array(
+                            'route'    => '/delete/:id',
+                            'defaults' => array(
+                                'controller' => 'Blog\Controller\Delete',
+                                'action'     => 'delete'
+                            ),
+                            'constraints' => array(
+                                'id' => '\d+'
+                            )
+                        )
+                    ),
                 )
             )
         )
