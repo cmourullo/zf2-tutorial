@@ -61,7 +61,20 @@ return array(
                                 'action'     => 'add'
                             )
                         )
-                    )
+                    ),
+                    'edit' => array(
+                        'type' => 'segment',
+                        'options' => array(
+                            'route'    => '/edit/:id',
+                            'defaults' => array(
+                                'controller' => 'Blog\Controller\Write',
+                                'action'     => 'edit'
+                            ),
+                            'constraints' => array(
+                                'id' => '\d+'
+                            )
+                        )
+                    ),
                 )
             )
         )
