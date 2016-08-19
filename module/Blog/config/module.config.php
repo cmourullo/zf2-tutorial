@@ -36,7 +36,7 @@ return array(
                     'defaults' => array(
                         'controller' => 'Blog\Controller\List',
                         'action'     => 'index',
-                    ),
+                    )
                 ),
                 'may_terminate' => true,
                 'child_routes'  => array(
@@ -48,7 +48,7 @@ return array(
                                 'action' => 'detail'
                             ),
                             'constraints' => array(
-                                'id' => '[1-9]\d*'
+                                'id' => '\d+'
                             )
                         )
                     ),
