@@ -51,6 +51,16 @@ return array(
                                 'id' => '[1-9]\d*'
                             )
                         )
+                    ),
+                    'add' => array(
+                        'type' => 'literal',
+                        'options' => array(
+                            'route'    => '/add',
+                            'defaults' => array(
+                                'controller' => 'Blog\Controller\Write',
+                                'action'     => 'add'
+                            )
+                        )
                     )
                 )
             )
