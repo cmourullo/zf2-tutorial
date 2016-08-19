@@ -6,7 +6,7 @@ use Zend\Form\Form;
 
 class PostForm extends Form
 {
-    public function ___construct($name = null, $options = array())
+    public function __construct($name = null, $options = array())
     {
         parent::__construct($name, $options);
 
