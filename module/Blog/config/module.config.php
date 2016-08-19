@@ -24,7 +24,8 @@ return array(
     'controllers' => array(
         'factories' => array(
             'Blog\Controller\List' => 'Blog\Factory\ListControllerFactory',
-            'Blog\Controller\Write' => 'Blog\Factory\WriteControllerFactory'
+            'Blog\Controller\Write' => 'Blog\Factory\WriteControllerFactory',
+            'Blog\Controller\Delete' => 'Blog\Factory\DeleteControllerFactory'
         )
     ),
     'router' => array(

@@ -19,14 +19,8 @@ class ZendDbSqlMapper implements PostMapperInterface
      */
     protected $dbAdapter;
 
-    /**
-     * @var \Zend\Stdlib\Hydrator\HydratorInterface
-     */
     protected $hydrator;
 
-    /**
-     * @var \Blog\Model\PostInterface
-     */
     protected $postPrototype;
 
     /**
@@ -45,10 +39,7 @@ class ZendDbSqlMapper implements PostMapperInterface
     }
 
     /**
-     * @param int|string $id
-     *
-     * @return PostInterface
-     * @throws \InvalidArgumentException
+     * {@inheritDoc}
      */
     public function find($id)
     {
@@ -67,7 +58,7 @@ class ZendDbSqlMapper implements PostMapperInterface
     }
 
     /**
-     * @return array|PostInterface[]
+     * {@inheritDoc}
      */
     public function findAll()
     {
@@ -87,10 +78,7 @@ class ZendDbSqlMapper implements PostMapperInterface
     }
 
     /**
-     * @param PostInterface $postObject
-     *
-     * @return PostInterface
-     * @throws \Exception
+     * {@inheritDoc}
      */
     public function save(PostInterface $postObject)
     {
@@ -99,12 +87,12 @@ class ZendDbSqlMapper implements PostMapperInterface
 
         if ($postObject->getId()) {
             // ID present, it's an Update
-            $action = new Update('posts');
+            $action = new Update('post');
             $action->set($postData);
             $action->where(array('id = ?' => $postObject->getId()));
         } else {
             // ID NOT present, it's an Insert
-            $action = new Insert('posts');
+            $action = new Insert('post');
             $action->values($postData);
         }
 
