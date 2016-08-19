@@ -6,10 +6,10 @@ use Zend\Form\Form;
 
 class PostForm extends Form
 {
-    public function __construct()
+    public function ___construct($name = null, $options = array())
     {
         parent::__construct($name, $options);
-        
+
         $this->add(array(
             'name' => 'post-fieldset',
             'type' => 'Blog\Form\PostFieldset'
