@@ -34,6 +34,7 @@ class WriteController extends AbstractActionController
 
                     return $this->redirect()->toRoute('blog');
                 } catch (\Exception $e) {
+                    die($e->getMessage());
                     // Some DB Error happened, log it and let the user know
                 }
             }
@@ -70,5 +71,4 @@ class WriteController extends AbstractActionController
             'form' => $this->postForm
         ));
     }
-}
 }
